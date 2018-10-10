@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Test
+npm test
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+    echo "failed $CMD"
+    exit 1
+fi
+
+# lint
+yarn lint
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+    echo "failed $CMD"
+    exit 1
+fi
+
+# Code duplication
+npm run code-duplication
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+    echo "failed $CMD"
+    exit 1
+fi
+
+exit 0

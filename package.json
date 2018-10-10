@@ -1,0 +1,66 @@
+{
+  "name": "@cortaix/ms-campaign",
+  "version": "0.0.1",
+  "description": "A Boilerplate application for building REST APIs using express, sequelize in ES6 with code coverage",
+  "author": "Jeremy Viel <jeremy.viel@thalesdigital.io>",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">=10.9"
+  },
+  "scripts": {
+    "start": "concurrently 'npm run ms-campaign' -n 'MS-campaign' -c yellow",
+    "install": "node scripts/install.js",
+    "force-env": "node scripts/install.js --force",
+    "ms-campaign": "nodemon",
+    "lint": "eslint .",
+    "npm:clean": "rm -f yarn.lock && rm -f package-lock.json && rm -rf node_modules",
+    "code-duplication": "jscpd --config .cpd.yaml",
+    "setup-git-hooks": "ln -s `pwd`/scripts/git_hooks/* .git/hooks/",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cortaix/nodejs-ms-campaign.git"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.3",
+    "colors": "~1.3.2",
+    "compression": "~1.7.2",
+    "concat": "~1.0.3",
+    "cookie-parser": "~1.4.3",
+    "cors": "~2.8.4",
+    "dotenv": "~6.0.0",
+    "eslint-config-airbnb-base": "~13.0.0",
+    "eslint-plugin-import": "~2.13.0",
+    "eslint-plugin-node": "~6.0.1",
+    "express": "~4.16.3",
+    "express-mquery": "^1.0.2",
+    "filehound": "~1.16.2",
+    "fs-extra": "^6.0.1",
+    "helmet": "~3.12.0",
+    "http-status": "~1.2.0",
+    "joi": "~13.6.0",
+    "mongoose": "~5.3.1",
+    "mongoose-rest-actions": "^0.18.0",
+    "morgan": "~1.9.0",
+    "request-promise": "~4.2.2",
+    "rss-parser": "~3.4.2",
+    "sanitizer": "^0.1.3",
+    "swagger-express-middleware": "~1.0.0-alpha.12",
+    "swagger-ui-express": "~2.0.14",
+    "winston": "~3.1.0",
+    "yamljs": "~0.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/prompt-cli": "^7.0.0",
+    "concurrently": "~4.0.1",
+    "eslint": "~5.4.0",
+    "glob": "^7.1.2",
+    "husky": "^0.14.3",
+    "jscpd": "~0.6.22",
+    "nodemon": "~1.18.4"
+  }
+}

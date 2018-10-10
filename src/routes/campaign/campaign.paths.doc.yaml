@@ -1,0 +1,77 @@
+  /campaigns/:
+    get:
+      tags:
+        - campaign
+      description: Get campaigns
+      operationId: getMany
+      responses:
+        "200":
+          $ref: '#/definitions/CampaignsWithId' 
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+    post:
+      tags:
+        - campaign
+      description: create a campaigns
+      operationId: createOne
+      parameters:
+        - name: id
+          in: path
+          description: campaign identifier
+          required: true
+          type: string
+        - in: body
+          name: campaign
+          description: campaign information
+          required: true
+          schema:
+            $ref: '#/definitions/Campaign'
+      responses:
+        "200":
+          $ref: '#/definitions/CampaignWithId' 
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+  /campaigns/{id}:
+    get:
+      tags:
+        - campaign
+      description: Get one campaign
+      operationId: getOneById
+      responses:
+        "200":
+          $ref: '#/definitions/CampaignsWithId' 
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+    patch:
+      tags:
+        - campaign
+      description: udpate a campaign by id
+      operationId: updateOneById
+      parameters:
+        - name: id
+          in: path
+          description: campaign identifier
+          required: true
+          type: string
+        - in: body
+          name: campaign
+          description: campaign information
+          required: true
+          schema:
+            $ref: '#/definitions/Campaign'
+      responses:
+        "200":
+          $ref: '#/definitions/CampaignWithId' 
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'

@@ -1,0 +1,20 @@
+swagger: "2.0"
+info:
+  version: {version}
+  title: Swagger Microservice Campaign
+  description:  REST API swagger documentation for nodeJs microservices
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Jeremy viel
+    email: jeremy.viel@thalesdigital.io
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: {host}
+basePath: /api
+schemes:
+  - {protocol}
+consumes:
+  - application/json
+produces:
+  - application/json
