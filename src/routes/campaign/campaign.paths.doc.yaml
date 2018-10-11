@@ -43,6 +43,12 @@
         - campaign
       description: Get one campaign
       operationId: getOneById
+      parameters:
+      - name: id
+        in: path
+        description: campaign identifier
+        required: true
+        type: string
       responses:
         "200":
           $ref: '#/definitions/CampaignsWithId' 

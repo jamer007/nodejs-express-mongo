@@ -14,7 +14,7 @@ async function getMany(options) {
   let skip = null;
 
   if (options.paginate && options.paginate.limit) {
-    limit = { ...options.paginate.limit };
+    ({ limit } = options.paginate);
 
     if (options.paginate.page && options.paginate.page > 1) {
       skip = limit * options.paginate.page;
