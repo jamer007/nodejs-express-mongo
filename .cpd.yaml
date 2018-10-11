@@ -1,0 +1,10 @@
+
+languages:
+  - javascript
+files:
+  - "src/**/*"
+exclude:
+  - "node_modules/**/*"
+  - "src/**/*.spec.ts"
+reporter: json
+limit: 5
